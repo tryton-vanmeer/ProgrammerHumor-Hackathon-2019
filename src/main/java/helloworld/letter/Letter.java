@@ -24,16 +24,6 @@ public abstract class Letter
         return this.letter;
     }
 
-    /**
-     * Set this Letter's letter
-     * 
-     * @param letter the letter to set
-     */
-    public void setLetter(char letter)
-    {
-        this.letter = letter;
-    }
-
     @Override
     public String toString()
     {

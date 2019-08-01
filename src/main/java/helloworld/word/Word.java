@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import helloworld.letter.Letter;
 import helloworld.letter.LetterSpace;
 
+/**
+ * A Word is a joined list of letters.
+ */
 public class Word
 {
     private ArrayList<Letter> letters;
@@ -14,6 +17,11 @@ public class Word
         this.letters = new ArrayList<>();
     }
 
+    /**
+     * Helper method that returns a Word consisting of one LetterSpace.
+     * 
+     * @return Word consisting of one LetterSpace.
+     */
     public static Word getSpaceWord()
     {
         Builder builder = new Builder();
@@ -21,6 +29,11 @@ public class Word
         return builder.addLetter(new LetterSpace()).build();
     }
 
+    /**
+     * Adds a letter to the word.
+     * 
+     * @param letter The letter to add to the word.
+     */
     private void addLetter(Letter letter)
     {
         this.letters.add(letter);
@@ -65,6 +78,9 @@ public class Word
         }
     }
 
+    /**
+     * Builder for Words.
+     */
     public static class Builder
     {
         private Word word;
@@ -74,12 +90,23 @@ public class Word
             this.word = new Word();
         }
 
+        /**
+         * Adds a letter to the word being built.
+         * 
+         * @param letter the letter to add to the word.
+         * @return this Builder instance.
+         */
         public Builder addLetter(Letter letter)
         {
             this.word.addLetter(letter);
             return this;
         }
 
+        /**
+         * Returns the built word.
+         * 
+         * @return Word build from given letters.
+         */
         public Word build()
         {
             return this.word;
