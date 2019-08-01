@@ -40,6 +40,7 @@ public class Word implements IBooleanConvertable
         this.letters.add(letter);
     }
 
+    @Override
     public boolean toBoolean()
     {
         if (this.toString().equals("True"))

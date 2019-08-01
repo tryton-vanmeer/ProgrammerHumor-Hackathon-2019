@@ -1,11 +1,13 @@
 package helloworld.letter;
 
+import helloworld.api.IBooleanConvertable;
+
 /**
  * Letter
  * 
  * Represents a letter.
  */
-public abstract class Letter
+public abstract class Letter implements IBooleanConvertable
 {
     private char letter;
 
@@ -22,6 +24,31 @@ public abstract class Letter
     public char getLetter()
     {
         return this.letter;
+    }
+
+    @Override
+    public boolean toBoolean()
+    {
+        if (this.toString().equals("t"))
+        {
+            return true;
+        }
+        else if (this.toString().equals("T"))
+        {
+            return true;
+        }
+        else if (this.toString().equals("f"))
+        {
+            return false;
+        }
+        else if (this.toString().equals("F"))
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @Override

@@ -24,4 +24,25 @@ public class LetterTest
         Letter letter = new LetterLowerCase('z');
         assertEquals(letter.getLetter(), 'z');
     }
+
+    @Test
+    public void testLetterToBooleanT() throws InvalidCaseException
+    {
+        Letter letter = new LetterUpperCase('T');
+        assertEquals(letter.toBoolean(), true);
+    }
+
+    @Test
+    public void testLetterToBooleanF() throws InvalidCaseException
+    {
+        Letter letter = new LetterLowerCase('f');
+        assertEquals(letter.toBoolean(), false);
+    }
+
+    @Test
+    public void testLetterToBooleanOther() throws InvalidCaseException
+    {
+        Letter letter = new LetterLowerCase('e');
+        assertEquals(letter.toBoolean(), false);
+    }
 }
