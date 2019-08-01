@@ -34,4 +34,32 @@ public class WordTest
 
         assertEquals(space.toString(), " ");
     }
+
+    @Test
+    public void testWordEquality() throws InvalidCaseException
+    {
+        Word.Builder builder = new Word.Builder();
+
+        Word word1 = builder
+                        .addLetter(new LetterUpperCase('H'))
+                        .addLetter(new LetterLowerCase('e'))
+                        .addLetter(new LetterLowerCase('l'))
+                        .addLetter(new LetterLowerCase('l'))
+                        .addLetter(new LetterLowerCase('o'))
+                        .build();
+
+        builder = new Word.Builder();
+
+        Word word2 = builder
+                        .addLetter(new LetterUpperCase('H'))
+                        .addLetter(new LetterLowerCase('e'))
+                        .addLetter(new LetterLowerCase('l'))
+                        .addLetter(new LetterLowerCase('l'))
+                        .addLetter(new LetterLowerCase('o'))
+                        .build();
+        
+        boolean result = word1.equals(word2);
+
+        assertEquals(result, true);
+    }
 }

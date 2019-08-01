@@ -39,6 +39,32 @@ public class Word
         return builder.toString();
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        else if (obj instanceof Word)
+        {
+            Word wordToTest = (Word) obj;
+
+            if (this.toString().equals(wordToTest.toString()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public static class Builder
     {
         private Word word;
