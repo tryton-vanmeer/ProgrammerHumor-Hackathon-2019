@@ -37,19 +37,11 @@ public abstract class Letter
     }
 
     /**
-     * Letter's implement how they should be drawn.
+     * toString with fancy representation
      * 
-     * @param fancy if the drawing should be fancy
+     * @return fancy representation of this letter as a String
      */
-    public abstract void draw(boolean fancy);
-
-    /** 
-     * See {@link #draw(boolean) draw(boolean)}
-     */
-    public void draw()
-    {
-        draw(false);
-    }
+    public abstract String toFancyString();
 
     @Override
     public String toString()
