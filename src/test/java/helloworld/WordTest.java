@@ -110,4 +110,49 @@ public class WordTest
 
         assertEquals(result, false);
     }
+
+    @Test
+    public void testWordToBooleanTrue() throws InvalidCaseException
+    {
+        Word.Builder builder = new Word.Builder();
+
+        Word word = builder
+                        .addLetter(new LetterUpperCase('T'))
+                        .addLetter(new LetterLowerCase('r'))
+                        .addLetter(new LetterLowerCase('u'))
+                        .addLetter(new LetterLowerCase('e'))
+                        .build();
+
+        assertEquals(word.toBoolean(), true);
+    }
+
+    @Test
+    public void testWordToBooleanFalse() throws InvalidCaseException
+    {
+        Word.Builder builder = new Word.Builder();
+
+        Word word = builder
+                        .addLetter(new LetterUpperCase('F'))
+                        .addLetter(new LetterLowerCase('a'))
+                        .addLetter(new LetterLowerCase('l'))
+                        .addLetter(new LetterLowerCase('s'))
+                        .addLetter(new LetterLowerCase('e'))
+                        .build();
+
+        assertEquals(word.toBoolean(), false);
+    }
+
+    @Test
+    public void testWordToBooleanFalseOther() throws InvalidCaseException
+    {
+        Word.Builder builder = new Word.Builder();
+
+        Word word = builder
+                        .addLetter(new LetterUpperCase('F'))
+                        .addLetter(new LetterLowerCase('o'))
+                        .addLetter(new LetterLowerCase('o'))
+                        .build();
+
+        assertEquals(word.toBoolean(), false);
+    }
 }

@@ -2,13 +2,14 @@ package helloworld.word;
 
 import java.util.ArrayList;
 
+import helloworld.api.IBooleanConvertable;
 import helloworld.letter.Letter;
 import helloworld.letter.LetterSpace;
 
 /**
  * A Word is a joined list of letters.
  */
-public class Word
+public class Word implements IBooleanConvertable
 {
     private ArrayList<Letter> letters;
 
@@ -37,6 +38,30 @@ public class Word
     private void addLetter(Letter letter)
     {
         this.letters.add(letter);
+    }
+
+    public boolean toBoolean()
+    {
+        if (this.toString().equals("True"))
+        {
+            return true;
+        }
+        else if (this.toString().equals("true"))
+        {
+            return true;
+        }
+        else if (this.toString().equals("False"))
+        {
+            return false;
+        }
+        else if (this.toString().equals("false"))
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @Override
