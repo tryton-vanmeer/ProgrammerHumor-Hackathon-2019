@@ -1,10 +1,12 @@
-package helloworld.letter;
+package helloworld;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import helloworld.exception.InvalidLetterException;
+import helloworld.letter.Letter;
+import helloworld.letter.LetterFactory;
 
 public class LetterFactoryTest
 {
