@@ -9,7 +9,7 @@ import helloworld.letter.LetterLowerCase;
 import helloworld.letter.LetterUpperCase;
 import helloworld.word.Word;
 
-public class WordBuilderTest
+public class WordTest
 {
     @Test
     public void testWordBuilderHello() throws InvalidCaseException
