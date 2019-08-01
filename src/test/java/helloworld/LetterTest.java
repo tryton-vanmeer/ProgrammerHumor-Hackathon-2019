@@ -45,4 +45,37 @@ public class LetterTest
         Letter letter = new LetterLowerCase('e');
         assertEquals(letter.toBoolean(), false);
     }
+
+    @Test
+    public void testLetterEquality() throws InvalidCaseException
+    {
+        Letter letter = new LetterLowerCase('a');
+        Letter letter2 = new LetterLowerCase('a');
+
+        boolean result = letter.equals(letter2);
+
+        assertEquals(result, true);
+    }
+
+    @Test
+    public void testLetterEqualityDifferentLetter() throws InvalidCaseException
+    {
+        Letter letter = new LetterLowerCase('a');
+        Letter letter2 = new LetterUpperCase('Z');
+
+        boolean result = letter.equals(letter2);
+
+        assertEquals(result, false);
+    }
+
+    @Test
+    public void testLetterEqualityNull() throws InvalidCaseException
+    {
+        Letter letter = new LetterLowerCase('a');
+        Letter letter2 = null;
+
+        boolean result = letter.equals(letter2);
+
+        assertEquals(result, false);
+    }
 }

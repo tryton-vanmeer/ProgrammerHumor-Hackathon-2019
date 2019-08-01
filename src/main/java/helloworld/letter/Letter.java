@@ -26,7 +26,6 @@ public abstract class Letter implements IBooleanConvertable
         return this.letter;
     }
 
-    @Override
     public boolean toBoolean()
     {
         if (this.toString().equals("t"))
@@ -58,5 +57,31 @@ public abstract class Letter implements IBooleanConvertable
         builder.append(this.letter);
 
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        else if (obj instanceof Letter)
+        {
+            Letter letterToTest = (Letter) obj;
+
+            if (this.toString().equals(letterToTest.toString()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 }

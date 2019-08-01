@@ -39,6 +39,32 @@ public class Sentence
         return builder.toString();
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        else if (obj instanceof Sentence)
+        {
+            Sentence sentenceToTest = (Sentence) obj;
+
+            if (this.toString().equals(sentenceToTest.toString()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     /**
      * Builder for Sentences.
      */
