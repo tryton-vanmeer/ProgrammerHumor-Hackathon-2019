@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import helloworld.api.IBooleanConvertable;
 import helloworld.letter.Letter;
+import helloworld.letter.LetterPunctuation;
 import helloworld.letter.LetterSpace;
+import helloworld.letter.LetterPunctuation.Punctuation;
 
 /**
  * A Word is a joined list of letters.
@@ -28,6 +30,18 @@ public class Word implements IBooleanConvertable
         Builder builder = new Builder();
 
         return builder.addLetter(new LetterSpace()).build();
+    }
+
+    /**
+     * Helper method that returns a Word consisting of a punctuation.
+     * 
+     * @return Word consisting of one punctuation.
+     */
+    public static Word getPunctuationWord(Punctuation punctuation) 
+    {
+        Builder builder = new Builder();
+
+        return builder.addLetter(LetterPunctuation.getPunctuationLetter(punctuation)).build();
     }
 
     /**

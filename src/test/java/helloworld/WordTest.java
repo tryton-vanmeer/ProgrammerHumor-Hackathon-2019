@@ -7,6 +7,7 @@ import org.junit.Test;
 import helloworld.exception.InvalidCaseException;
 import helloworld.letter.LetterLowerCase;
 import helloworld.letter.LetterUpperCase;
+import helloworld.letter.LetterPunctuation.Punctuation;
 import helloworld.word.Word;
 
 public class WordTest
@@ -154,5 +155,13 @@ public class WordTest
                         .build();
 
         assertEquals(word.toBoolean(), false);
+    }
+
+    @Test
+    public void testWordLetterPunctuationBang()
+    {
+        Word word = Word.getPunctuationWord(Punctuation.BANG);
+
+        assertEquals(word.toString(), "!");
     }
 }
