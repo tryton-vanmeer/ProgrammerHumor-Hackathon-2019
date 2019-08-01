@@ -5,7 +5,7 @@ package helloworld.letter;
  * 
  * Represents a letter.
  */
-public class Letter
+public abstract class Letter
 {
     private char letter;
 
