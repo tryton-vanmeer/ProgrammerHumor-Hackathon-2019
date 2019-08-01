@@ -6,12 +6,4 @@ public class PrintUtil
     {
         System.out.println(s);
     }
-
-    public static void printBlock(String... lines)
-    {
-        for (String line : lines)
-        {
-            print(line);
-        }
-    }
 }
