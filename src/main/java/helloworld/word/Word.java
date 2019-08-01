@@ -3,6 +3,7 @@ package helloworld.word;
 import java.util.ArrayList;
 
 import helloworld.letter.Letter;
+import helloworld.letter.LetterSpace;
 
 public class Word
 {
@@ -11,6 +12,13 @@ public class Word
     private Word()
     {
         this.letters = new ArrayList<>();
+    }
+
+    public static Word getSpaceWord()
+    {
+        Builder builder = new Builder();
+
+        return builder.addLetter(new LetterSpace()).build();
     }
 
     private void addLetter(Letter letter)
