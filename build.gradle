@@ -15,4 +15,12 @@ jar {
     }
 }
 
+tasks.withType(Test) { 
+  testLogging {
+    exceptionFormat "full"
+    events "passed", "failed"
+    showStandardStreams true
+  }
+}
+
 mainClassName = 'helloworld.HelloWorld'
