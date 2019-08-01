@@ -3,6 +3,7 @@ package helloworld;
 import helloworld.exception.InvalidCaseException;
 import helloworld.letter.LetterLowerCase;
 import helloworld.letter.LetterUpperCase;
+import helloworld.letter.LetterPunctuation.Punctuation;
 import helloworld.sentence.Sentence;
 import helloworld.util.PrintUtil;
 import helloworld.word.Word;
@@ -35,8 +36,10 @@ public class HelloWorld
 
         Sentence sentence = sentenceBuilder
                                 .addWord(hello)
+                                .addWord(Word.getPunctuationWord(Punctuation.COMMA))
                                 .addWord(Word.getSpaceWord())
                                 .addWord(world)
+                                .addWord(Word.getPunctuationWord(Punctuation.BANG))
                                 .build();
 
         PrintUtil.print(sentence.toString());
