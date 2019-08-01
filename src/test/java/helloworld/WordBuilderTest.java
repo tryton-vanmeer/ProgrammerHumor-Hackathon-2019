@@ -12,7 +12,7 @@ import helloworld.word.Word;
 public class WordBuilderTest
 {
     @Test
-    public void TestWordBuilderHello() throws InvalidCaseException
+    public void testWordBuilderHello() throws InvalidCaseException
     {
         Word.Builder builder = new Word.Builder();
 
@@ -25,5 +25,13 @@ public class WordBuilderTest
                         .build();
         
         assertEquals(word.toString(), "Hello");
+    }
+
+    @Test
+    public void testSpaceWord()
+    {
+        Word space = Word.getSpaceWord();
+
+        assertEquals(space.toString(), " ");
     }
 }
