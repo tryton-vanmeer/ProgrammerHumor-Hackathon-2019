@@ -4,23 +4,22 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import helloworld.exception.InvalidLetterException;
-import helloworld.letter.LetterFactory;
+import helloworld.letter.Letter;
 import helloworld.word.Word;
 
 public class WordBuilderTest
 {
     @Test
-    public void TestWordBuilderHello() throws InvalidLetterException
+    public void TestWordBuilderHello()
     {
         Word.Builder builder = new Word.Builder();
 
         Word word = builder
-                        .addLetter(LetterFactory.getLetter('H'))
-                        .addLetter(LetterFactory.getLetter('e'))
-                        .addLetter(LetterFactory.getLetter('l'))
-                        .addLetter(LetterFactory.getLetter('l'))
-                        .addLetter(LetterFactory.getLetter('o'))
+                        .addLetter(new Letter('H'))
+                        .addLetter(new Letter('e'))
+                        .addLetter(new Letter('l'))
+                        .addLetter(new Letter('l'))
+                        .addLetter(new Letter('o'))
                         .build();
         
         assertEquals(word.toString(), "Hello");

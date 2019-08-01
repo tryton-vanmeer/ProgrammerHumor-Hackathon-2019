@@ -5,11 +5,9 @@ package helloworld.letter;
  * 
  * Represents a letter.
  */
-public abstract class Letter
+public class Letter
 {
     private char letter;
-
-    public Letter() {}
 
     public Letter(char letterIn)
     {
@@ -35,13 +33,6 @@ public abstract class Letter
     {
         this.letter = letter;
     }
-
-    /**
-     * toString with fancy representation
-     * 
-     * @return fancy representation of this letter as a String
-     */
-    public abstract String toFancyString();
 
     @Override
     public String toString()
